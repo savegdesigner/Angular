@@ -1,0 +1,15 @@
+{
+  "name": "aula-01",
+  "version": "1.0.0",
+  "description": "Aprendendo Typescript",
+  "main": "exemplo01.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
