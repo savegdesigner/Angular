@@ -10,13 +10,21 @@ import runExe02 from './exe02'
 // runExe02()
 
 // 3. Um ano é bissexto se for divisível por 4 exceto os séculos, que são bissextos se forem múltiplos de 400. Escreva um programa que lê um ano e determina se este é bissexto.
-import calcularAnoBissexto from './exe03'
-// console.log(calcularAnoBissexto(2020))
+import runExe03 from './exe03'
+// console.log(runExe03(2020))
 
 // 4. Dê o conceito do aluno conforme sua nota média, considerando:
 // Entrada: 3 notas (números reais)
 //  caso 8 <= média <= 10 --> nota A
-//  caso 7 <= média <=8 --> nota B
+//  caso 7 <= média <= 8 --> nota B
 //  caso 5 <= média <= 7 --> nota C
 //  caso 4 <= média <= 5 --> nota D
 //  caso 0 <= média <= 4 --> nota E
+import runExe04 from './exe04'
+// console.log(runExe04())
+
+// 5. Escreva um algoritmo que leia os três números (possíveis lados de um triângulo) e imprima sua 
+// classificação quanto aos lados:  
+// a) Três lados iguais (equilátero) 
+// b) Dois lados iguais (isósceles) 
+// c) Três lados diferentes (escaleno)
