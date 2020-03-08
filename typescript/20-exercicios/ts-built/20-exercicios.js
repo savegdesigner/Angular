@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// console.log(runExe04())
-// 5. Escreva um algoritmo que leia os três números (possíveis lados de um triângulo) e imprima sua 
-// classificação quanto aos lados:  
-// a) Três lados iguais (equilátero) 
-// b) Dois lados iguais (isósceles) 
-// c) Três lados diferentes (escaleno)
+// runExe05()
+// 6. Escreva um programa TypeScript que exiba os números pares de 2 a 12 utilizando laços de repetição. 
+var exe06_1 = require("./exe06");
+exe06_1.default();

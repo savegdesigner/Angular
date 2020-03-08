@@ -27,4 +27,10 @@ import runExe04 from './exe04'
 // classificação quanto aos lados:  
 // a) Três lados iguais (equilátero) 
 // b) Dois lados iguais (isósceles) 
-// c) Três lados diferentes (escaleno)
+// c) Três lados diferentes (escaleno)]
+import runExe05 from './exe05'
+// runExe05()
+
+// 6. Escreva um programa TypeScript que exiba os números pares de 2 a 12 utilizando laços de repetição. 
+import runExe06 from './exe06'
+runExe06()
