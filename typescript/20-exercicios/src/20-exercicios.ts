@@ -33,4 +33,23 @@ import runExe05 from './exe05'
 
 // 6. Escreva um programa TypeScript que exiba os números pares de 2 a 12 utilizando laços de repetição. 
 import runExe06 from './exe06'
-runExe06()
+// runExe06()
+
+// 7. Escreva um programa que exiba qualquer tabuada completa:
+// a. O programa deve perguntar ao usuário qual tabuada ele deseja visualizar.
+// b. O usuário deverá responder digitando um número de 1 a 10.
+import runExe07 from './exe07'
+// runExe07()
+
+// 8. Escreva um programa que solicita 10 números e ao final exibe a soma de todos eles.
+import runExe08 from './exe08'
+// runExe08()
+
+// 9. Escreva um programa que solicita o nome e a altura de 5 atletas. Ao final da entrada de dados, informe
+// O NOME do atleta mais alto.
+// NÃO FUNCIONOU :/
+
+// 10. Solicite que seja digitada uma palavra que contenha a letra F ou comece com a letra P (pesquisar
+//     métodos de manipulação de string em TypeScript se necessário). 
+import runExe10 from './exe10'
+// runExe10()   
