@@ -1,0 +1,14 @@
+<main>
+    <div *ngFor="let dog of dogs" class="card">
+
+        <div class="image-wrapper">
+            <img [src]="dog.img" alt="Imagem do cão">
+        </div>
+        
+        <div class="text-area">
+            <p>{{dog.name}}</p>
+        </div>
+        
+
+    </div>
+</main>
