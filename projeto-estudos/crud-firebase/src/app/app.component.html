@@ -6,14 +6,23 @@
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
     
         <!-- Text Column -->
         <ng-container matColumnDef="text">
-        <th mat-header-cell *matHeaderCellDef> Text </th>
-        <td mat-cell *matCellDef="let element"> {{element.text}}</td>
+            <th mat-header-cell *matHeaderCellDef> Text </th>
+            <td mat-cell *matCellDef="let element">{{element.text}}</td>
+        </ng-container>
+
+          <!-- Button Column -->
+        <ng-container matColumnDef="button">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+             <td mat-cell *matCellDef="let element">
+                <button  mat-stroked-button color="primary">Update</button>
+                <button  mat-stroked-button color="warn">Delete</button>
+            </td>
         </ng-container>
     
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -1,17 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog'
 import { ModalProductComponent } from './modal-product/modal-product.component'
-// import { AngularFireDatabase } from '@angular/fire/database'
 
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs'
- 
-export interface dbStuff {
-  name: string
-  text: string
-}
 
-const DATA: dbStuff[] = []
+import { CrudService } from './crud.service'
+import { Crud } from './crud.model'
 
 @Component({
   selector: 'app-root',
@@ -19,15 +14,22 @@ const DATA: dbStuff[] = []
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'crud-firebase';
-  displayedColumns: string[] = ['name', 'text'];
-  items: Observable<any[]>
+  displayedColumns: string[] = ['name', 'text', 'button'];
+  // items: Observable<any[]>
   dataSource
+  dataItems: Array<any> = []
 
-  constructor(public dialog: MatDialog, private db: AngularFirestore) {
-    this.items = db.collection('test').valueChanges()
-    this.dataSource = this.items
+  constructor(public dialog: MatDialog, private crudService: CrudService) {
+    // this.items = this.db.read()
+    // this.dataSource = this.items
+  }
+
+  ngOnInit(){
+
+    this.dataSource = this.crudService.read()
+
   }
 
   public insert(): void{
@@ -36,10 +38,22 @@ export class AppComponent {
       data: {}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(result)
+      });
 
   } 
+
+  create(data: Crud){
+    this.crudService.create(data)
+  }
+
+  update(data: Crud){
+    this.crudService.update(data)
+  }
+
+  delete(data: Crud){
+    this.crudService.delete(data)
+  }
 
 }
