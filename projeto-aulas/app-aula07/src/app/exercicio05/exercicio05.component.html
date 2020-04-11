@@ -1,0 +1,9 @@
+<div class="exercicio05-wrapper">
+
+    <h1>Exercício 05</h1>
+
+    <div class="card" *ngFor="let poke of pokemonImg">
+        <img (click)="mostrarNome(poke)" src="../../assets/{{poke}}" alt="Pokemon">
+    </div>
+
+</div>

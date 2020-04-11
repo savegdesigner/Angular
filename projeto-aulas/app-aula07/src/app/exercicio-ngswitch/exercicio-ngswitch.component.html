@@ -1,0 +1,24 @@
+<div class="exercicio-wrapper">
+
+    <h1>Exercicio ngSwitch</h1>
+
+    <input type="text" [(ngModel)]="canal" placeholder="Digite um Canal do youtube">
+
+    <div [ngSwitch]="canal">
+        <div *ngSwitchCase="'Fazendo Nerdice'">
+            <h3>Fazendo Nerdice</h3>
+            <a href="https://www.youtube.com/channel/UCiP4JMEbjjmdjGuw7ZRFRPQ">Link aqui</a>
+        </div>
+
+        <div *ngSwitchCase="'Código Fonte'">
+            <h3>Código Fonte</h3>
+            <a href="https://www.youtube.com/user/codigofontetv">Link aqui</a>
+        </div>
+
+        <div *ngSwitchCase="'Linus'">
+            <h3>Linus Tech Tips</h3>
+            <a href="https://www.youtube.com/user/LinusTechTips">Link aqui</a>
+        </div>
+    </div>
+
+</div>

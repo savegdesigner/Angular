@@ -1,0 +1,18 @@
+<div class="exemplo01-wrapper">
+
+    <h1>Exemplo ngSwitch</h1>
+
+    <input [(ngModel)]="pokemon" type="text" placeholder="Digite o nome de um pokémon">
+
+
+    <div class="card" [ngSwitch]="pokemon">
+
+        <img *ngSwitchCase="'vaporeon'" src="../../assets/pokemon1.jpg" alt="pokemon">
+        <img *ngSwitchCase="'flareon'" src="../../assets/pokemon2.jpg" alt="pokemon">
+        <img *ngSwitchCase="'sylveon'" src="../../assets/pokemon3.jpg" alt="pokemon">
+
+        <img *ngSwitchDefault src="../../assets/ash.jpg" alt="Ash Kétium">
+
+    </div>
+
+</div>

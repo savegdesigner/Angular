@@ -1,0 +1,23 @@
+<div class="exercicio03-wrapper">
+
+    <h1>Exercício 03</h1>
+    
+    <select name="" id="" [(ngModel)]="preferenciaContato">
+        <option value="">Selecione</option>
+        <option value="whatsapp">Whatsapp</option>
+        <option value="email">E-mail</option>
+    </select>
+
+    <div *ngIf="preferenciaContato == 'whatsapp'">
+
+        <input type="tel" placeholder="Whatsapp">
+
+    </div>
+
+    <div *ngIf="preferenciaContato === 'email'">
+
+        <input type="email" placeholder="E-mail">
+
+    </div>
+
+</div>

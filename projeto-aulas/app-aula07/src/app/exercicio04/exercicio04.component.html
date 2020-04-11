@@ -1,0 +1,22 @@
+<div class="exercicio04-wrapper">
+
+    <h1>Exercício 04</h1>
+
+    <div class="calc">
+
+        <input type="number" placeholder="Número 1" [(ngModel)]="numero1">
+        <input type="number" placeholder="Número 2" [(ngModel)]="numero2">
+
+        <div *ngIf="numero1 && numero2">
+            <button (click)="calcular('+')">+</button>
+            <button (click)="calcular('-')">-</button>
+            <button (click)="calcular('*')">*</button>
+            <button (click)="calcular('/')">/</button>
+        </div>
+
+
+        <input type="number" placeholder="Resultado" [(ngModel)]="resultado">
+
+    </div>
+
+</div>

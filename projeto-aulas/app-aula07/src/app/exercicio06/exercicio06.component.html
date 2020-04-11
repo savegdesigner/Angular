@@ -1,0 +1,12 @@
+<div class="exercicio06-wrapper">
+
+    <h1>Exercício 06</h1>
+
+    <ol>
+        <li (click)="mostrarCapital(i)" *ngFor="let pais of paises; let i = index">
+            {{pais}}, Capital: {{capitais[i]}}
+        </li>
+    </ol>
+
+</div>
+

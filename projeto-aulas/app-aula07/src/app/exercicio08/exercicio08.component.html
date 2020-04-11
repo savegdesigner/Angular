@@ -1,0 +1,20 @@
+<div class="exercicio08-wrapper">
+
+    <h1>Exercício 08</h1>
+
+    <input [(ngModel)]="nome" type="text" placeholder="Nome do convidado">
+
+    <button (click)="adicionarNaLista()">Adicionar a lista</button>
+
+    <div>
+        <h3>Nomes na lista:</h3>
+
+        <ul>
+            <li *ngFor="let nomeLista of lista">
+                {{nomeLista}}
+            </li>
+        </ul>
+
+    </div>
+
+</div>
