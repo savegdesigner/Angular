@@ -11,7 +11,7 @@ export class CrudService {
   constructor(private db : AngularFirestore) { }
 
   read(){
-    return this.db.collection('test').snapshotChanges().pipe()
+    return this.db.collection('test').snapshotChanges()
   }
 
   create(data: Crud){
@@ -19,11 +19,12 @@ export class CrudService {
   }
 
   update(data: Crud){
+    delete data.id
     return this.db.doc('test/' + data.id).update(data)
   }
 
-  delete(data: Crud){
-    this.db.doc('test/' + data.id).delete()
+  delete(dataId: string){
+    this.db.doc('test/' + dataId).delete()
   }
 
 }

@@ -17,18 +17,25 @@ import { Crud } from './crud.model'
 export class AppComponent implements OnInit{
   title = 'crud-firebase';
   displayedColumns: string[] = ['name', 'text', 'button'];
-  // items: Observable<any[]>
-  dataSource
-  dataItems: Array<any> = []
+  dataItems: Array<Crud> = []
 
   constructor(public dialog: MatDialog, private crudService: CrudService) {
-    // this.items = this.db.read()
-    // this.dataSource = this.items
+
   }
 
   ngOnInit(){
 
-    this.dataSource = this.crudService.read()
+    this.crudService.read().subscribe(data => {
+      this.dataItems = data.map(item => {
+          const idData = item.payload.doc.id
+          const data = item.payload.doc.data() as Crud
+          
+          return {
+            idData, ...data
+          } 
+
+      })
+    })
 
   }
 
@@ -52,8 +59,12 @@ export class AppComponent implements OnInit{
     this.crudService.update(data)
   }
 
-  delete(data: Crud){
-    this.crudService.delete(data)
+  delete(dataId: string){
+    this.crudService.delete(dataId)
+  }
+
+  test(): void{
+    console.log(this.dataItems)
   }
 
 }
