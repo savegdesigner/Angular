@@ -1,0 +1,14 @@
+{
+  "name": "Backend-CRUD",
+  "version": "1.0.0",
+  "description": "Crud com angular e json-server no backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "json-server db.json --watch --port 3001"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  }
+}

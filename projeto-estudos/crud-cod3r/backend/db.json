@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Caneta Preta",
+            "preco": 5.89
+        },
+        {
+            "id": 2,
+            "name": "Caneta Vermelha",
+            "preco": 5.90
+        },
+        {
+            "id": 3,
+            "name": "Caneta Arco-íris",
+            "preco": 49.90
+        }
+    ]
+}
