@@ -1,34 +1,19 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Caneta Preta",
-      "preco": 5.89
-    },
-    {
-      "id": 2,
-      "name": "Caneta Vermelha",
-      "preco": 5.9
-    },
-    {
-      "id": 3,
-      "name": "Caneta Arco-íris",
-      "preco": 49.9
-    },
-    {
-      "name": "Product",
-      "price": 9.99,
+      "name": "PC Gamer Chipart",
+      "price": 8999,
       "id": 4
     },
     {
-      "name": "Product",
-      "price": 9.99,
+      "name": "Lego Star Wars 1200 peças",
+      "price": 1499,
       "id": 5
     },
     {
-      "name": "Product",
-      "price": 9.99,
-      "id": 6
+      "name": "Cadeira",
+      "price": 250,
+      "id": 7
     }
   ]
 }
