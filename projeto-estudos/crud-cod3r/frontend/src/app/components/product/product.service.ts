@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { HttpClient } from '@angular/common/http';
 import Product from './product.model';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,15 @@ export class ProductService {
     })
   }
 
+  errorHandler(e: any): Observable<any> {
+    this.showMessage('Ops, algo deu errado!')
+    return EMPTY
+  }
+
   create(product: Product): Observable<Product> {
     return this.http.post<Product>(this.baseUrl, product)
+      .pipe(map(obj => obj),
+        catchError(e => this.errorHandler(e)))
 
   }
 
