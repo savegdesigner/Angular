@@ -24,14 +24,15 @@ export class CrudService {
     })
   }
 
-  create(item: Crud): void {
+  create(item: Crud) {
       this.fireStore.collection(this.firebase).add(item)
         .then(data => {
-          console.log(data.id)
+          console.log(data)
         })
         .catch(err => {
           console.log(err)
         })
+        
   }
 
 

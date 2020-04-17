@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { CrudService } from '../crud.service';
+import Crud from '../crud.model';
 
 @Component({
   selector: 'app-crud-create',
@@ -8,6 +9,11 @@ import { CrudService } from '../crud.service';
   styleUrls: ['./crud-create.component.scss']
 })
 export class CrudCreateComponent implements OnInit {
+
+  item: Crud = {
+    name: '',
+    lastName: ''
+  }
 
   constructor(
     private router: Router,
@@ -19,9 +25,10 @@ export class CrudCreateComponent implements OnInit {
   }
 
   createItem(): void {
-    this.crudService.create({name: 'Vinicius', lastName: 'Savegnago'})
+    this.crudService.create(this.item)
     this.crudService.showMessage('Item created!')
     this.router.navigate(['/items'])
+
   }
 
   cancel(): void {
