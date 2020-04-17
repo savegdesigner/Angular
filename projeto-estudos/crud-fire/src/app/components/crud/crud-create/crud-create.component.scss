@@ -1,3 +1,12 @@
 button {
     margin: 10px;
 }
+
+form{
+    display: flex;
+    flex-flow: column;
+}
+
+.wrapper{
+    padding: 15px;
+}

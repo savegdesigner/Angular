@@ -24,15 +24,21 @@ export class CrudService {
     })
   }
 
-  create(item: Crud) {
-      this.fireStore.collection(this.firebase).add(item)
+  create(item: Crud): Promise<any> {
+      return this.fireStore.collection(this.firebase).add(item)
         .then(data => {
           console.log(data)
+          console.log(data.id)
         })
         .catch(err => {
           console.log(err)
         })
         
+  }
+
+  read(): Observable<any[]> {
+    return this.fireStore.collection(this.firebase).snapshotChanges()
+    
   }
 
 
