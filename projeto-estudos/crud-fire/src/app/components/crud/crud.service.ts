@@ -21,6 +21,7 @@ export class CrudService {
       duration: 2000,
       horizontalPosition: 'right',
       verticalPosition: 'top'
+      // panelClass: ['']
     })
   }
 
@@ -31,6 +32,7 @@ export class CrudService {
           console.log(data.id)
         })
         .catch(err => {
+          this.showMessage('Something went wrong...')
           console.log(err)
         })
         
