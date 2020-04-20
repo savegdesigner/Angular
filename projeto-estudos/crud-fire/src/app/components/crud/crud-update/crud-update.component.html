@@ -1,0 +1,28 @@
+<div class="wrapper">
+
+    <mat-card class="">
+
+        <mat-card-title>Update a item</mat-card-title>
+
+        <form>
+            <mat-form-field>
+                <input name="name" matInput type="text" placeholder="Name" [(ngModel)]="item.name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input name="lastName" matInput type="text" placeholder="Last name" [(ngModel)]="item.lastName">
+            </mat-form-field>
+        </form>
+
+        <button mat-raised-button color="warn" (click)="cancel()">
+            Cancel
+        </button>
+
+        <button mat-raised-button color="primary" (click)="updateItem()">
+            Update item
+        </button>
+
+
+    </mat-card>
+
+</div>

@@ -28,7 +28,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table';
+import { CrudUpdateComponent } from './components/crud/crud-update/crud-update.component';
+import { CrudDeleteComponent } from './components/crud/crud-delete/crud-delete.component'
 
 
 
@@ -41,6 +43,8 @@ import {MatTableModule} from '@angular/material/table'
     CrudComponent,
     CrudCreateComponent,
     CrudReadComponent,
+    CrudUpdateComponent,
+    CrudDeleteComponent,
   ],
   imports: [
     BrowserModule,

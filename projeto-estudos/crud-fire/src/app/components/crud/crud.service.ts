@@ -41,5 +41,19 @@ export class CrudService {
     
   }
 
+  readById(id: string): Promise<any>{
+    return this.fireStore.collection(this.firebase).doc(id).ref.get()
+
+  }
+
+  update(id: string, item: Crud): Promise<any> {
+    const url = `${this.firebase}/${id}`
+    return this.fireStore.doc(url).update(item)
+  }
+
+  delete(id: string) {
+    const url = `${this.firebase}/${id}`
+    return this.fireStore.doc(url).delete()
+  }
 
 }

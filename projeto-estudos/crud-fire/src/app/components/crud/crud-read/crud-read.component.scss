@@ -1,3 +1,25 @@
 table{
     width: 100%;
 }
+
+i{
+    margin: 5px;
+}
+
+#edit{
+    color: #c7be44;
+    transition: 150ms ease;
+
+    &:hover{
+        color: #a8a030;
+    }
+}
+
+#delete{
+    color: #ff7474;
+    transition: 150ms ease;
+
+    &:hover{
+        color: #b94e4e;
+    }
+}
