@@ -1,0 +1,19 @@
+{
+  "name": "RxJs",
+  "version": "1.0.0",
+  "description": "Getting into reactive X",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --config webpack.config.js --watch"
+  },
+  "keywords": [],
+  "author": "ME",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "^6.5.5",
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
