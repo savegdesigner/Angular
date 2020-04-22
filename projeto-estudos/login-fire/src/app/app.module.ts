@@ -7,8 +7,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { PageComponent } from './page/page.component';
-
 import { ReactiveFormsModule } from '@angular/forms'
+
+import Auth from './auth/auth.service'
+
+// FIrebase
+import { AngularFireModule } from '@angular/fire'
+import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFireDatabaseModule } from '@angular/fire/database'
+
+// Environment
+import { environment } from '../environments/environment'
 
 // Material
 import {MatFormFieldModule} from '@angular/material/form-field'
@@ -29,9 +38,12 @@ import {MatButtonModule} from '@angular/material/button'
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [ Auth ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

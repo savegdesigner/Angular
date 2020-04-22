@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms'
 
 import User from '../User.model'
+import Auth from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -11,12 +12,12 @@ import User from '../User.model'
 export class RegisterComponent implements OnInit {
 
   public form: FormGroup = new FormGroup({
-    'username': new FormControl(null),
+    'email': new FormControl(null),
     'password': new FormControl(null),
     'repeat-password': new FormControl(null)
   })
 
-  constructor() { }
+  constructor(private auth: Auth) { }
 
   ngOnInit(): void {
   }
@@ -25,11 +26,11 @@ export class RegisterComponent implements OnInit {
     console.log(this.form)
 
     let user: User = new User(
-      this.form.value.username,
+      this.form.value.email,
       this.form.value.password
     )
 
-    console.log(user)
+    this.auth.registerUser(user)
 
   }
 
