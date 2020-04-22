@@ -1,0 +1,32 @@
+<h2>Register</h2>
+
+<form [formGroup]="form" (ngSubmit)="registerUser()">
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formConrtolName="username" type="text" matInput placeholder="username">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" type="password" matInput placeholder="password">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+        <mat-label>Repeat Password</mat-label>
+        <input formControlName="repeat-password" type="password" matInput placeholder="password">
+        </mat-form-field>
+    </p>
+
+    <button type="submit" mat-stroked-button color="primary">Register</button>
+
+</form>
+
+<div class="router">
+    <span>Já possui uma conta ?</span>
+    <a href="">Entre aqui</a>
+</div>
