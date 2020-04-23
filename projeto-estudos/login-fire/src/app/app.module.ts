@@ -39,9 +39,9 @@ import {MatButtonModule} from '@angular/material/button'
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    AngularFireModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [ Auth ],
   bootstrap: [AppComponent]

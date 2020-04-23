@@ -8,11 +8,31 @@ class Auth {
 
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
             .then((response: any) => {
-                console.log(response)
+                console.log('User registered: ', response)
+
+                delete user.password
+
+                firebase.database().ref(`user_detail/${btoa(user.email)}`)
+                    .set(user)
             })
             .catch((error: Error) => {
                 console.log(error)
             })
+
+    }
+
+    public loginUser(user: User): void{
+
+        console.log('Service ready: ', user)
+
+        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+            .then((response: any) => {
+                console.log('Signed in: ', response)
+            })
+            .catch((error: Error) => {
+                console.log(error)
+            })
+
     }
 }
 

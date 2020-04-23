@@ -3,8 +3,15 @@
 <form [formGroup]="form" (ngSubmit)="registerUser()">
     <p>
         <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input name="email" formControlName="email" type="email" matInput placeholder="E-mail">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
-        <input name="email" formControlName="email" type="email" matInput placeholder="username">
+        <input name="username" formControlName="username" type="text" matInput placeholder="username">
         </mat-form-field>
     </p>
 
@@ -28,5 +35,5 @@
 
 <div class="router">
     <span>Já possui uma conta ?</span>
-    <a href="">Entre aqui</a>
+    <a routerLink="/login">Entre aqui</a>
 </div>
