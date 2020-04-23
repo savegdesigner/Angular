@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import Auth from '../auth.service';
 import User from '../User.model'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,10 @@ export class LoginComponent implements OnInit {
     'password': new FormControl(null)
   })
 
-  constructor(private auth: Auth) { }
+  constructor(
+    private auth: Auth,
+    private route: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +33,8 @@ export class LoginComponent implements OnInit {
     }
 
     this.auth.loginUser(user)
+
+    this.route.navigate(['home'])
 
   }
 
