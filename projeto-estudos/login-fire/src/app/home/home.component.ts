@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   // dialog
   openDialog(): void{
     const dialogRef = this.dialog.open(AddPostComponent, {
-      width: '250px',
+      width: '350px',
       data: {}
     });
   }

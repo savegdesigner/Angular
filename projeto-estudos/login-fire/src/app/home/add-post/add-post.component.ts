@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import Db from 'src/app/db.service';
 
+import * as firebase from 'firebase'
+
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
@@ -9,8 +11,10 @@ import Db from 'src/app/db.service';
 })
 export class AddPostComponent implements OnInit {
 
+  email: string
   title: string = ''
   description: string =''
+  image: any
 
   constructor(
     public dialogRef: MatDialogRef<AddPostComponent>,
@@ -18,6 +22,11 @@ export class AddPostComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    firebase.auth().onAuthStateChanged((user) => {
+        console.log(user)
+
+        this.email = user.email
+    })
   }
 
   close(): void {
@@ -25,8 +34,17 @@ export class AddPostComponent implements OnInit {
   }
 
   post(): void {
+    this.db.post({
+      email: this.email,
+      title: this.title,
+      description: this.description
+    })
+
     this.dialogRef.close();
-    console.log(this.description, this.title)
-    this.db.post('')
   }
+
+  public imageUpload(event: Event): void{
+    console.log((<HTMLInputElement>event.target).files)
+  }
+
 }
