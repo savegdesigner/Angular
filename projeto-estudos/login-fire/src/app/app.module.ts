@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { HomeComponent } from './home/home.component'
 import { PostsComponent } from './home/posts/posts.component'
 
+import AuthGuard from './auth-guard.service';
 import Auth from './auth/auth.service'
+import Db from './db.service';
 
 // FIrebase
 import { AngularFireModule } from '@angular/fire'
@@ -23,7 +26,9 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
-import AuthGuard from './auth-guard.service';
+import {MatDialogModule} from '@angular/material/dialog'
+import {MatIconModule} from '@angular/material/icon';
+import { AddPostComponent } from './home/add-post/add-post.component'
 
 
 @NgModule({
@@ -33,7 +38,8 @@ import AuthGuard from './auth-guard.service';
     RegisterComponent,
     PageComponent,
     HomeComponent,
-    PostsComponent
+    PostsComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +52,12 @@ import AuthGuard from './auth-guard.service';
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatIconModule,
+    FormsModule
   ],
-  providers: [ Auth, AuthGuard ],
+  providers: [ Auth, AuthGuard, Db ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

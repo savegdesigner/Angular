@@ -1,5 +1,9 @@
 <div class="container">
-    <a (click)="logout()">Logout</a>
+    <button mat-raised-button (click)="logout()">Logout</button>
+    
+    <button (click)="openDialog()" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+        <mat-icon>add</mat-icon>
+    </button>
 
     <app-posts></app-posts>
 </div>
