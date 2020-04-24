@@ -23,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
+import AuthGuard from './auth-guard.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import {MatCardModule} from '@angular/material/card'
     AngularFireDatabaseModule,
     MatCardModule
   ],
-  providers: [ Auth ],
+  providers: [ Auth, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
     this.auth.loginUser(user)
 
-    this.route.navigate(['home'])
+    // this.route.navigate(['home'])
 
   }
 
