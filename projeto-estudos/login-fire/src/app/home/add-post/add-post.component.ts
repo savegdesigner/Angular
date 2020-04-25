@@ -37,14 +37,16 @@ export class AddPostComponent implements OnInit {
     this.db.post({
       email: this.email,
       title: this.title,
-      description: this.description
+      description: this.description,
+      image: this.image[0]
     })
 
     this.dialogRef.close();
   }
 
   public imageUpload(event: Event): void{
-    console.log((<HTMLInputElement>event.target).files)
+    this.image = (<HTMLInputElement>event.target).files
+
   }
 
 }
