@@ -3,6 +3,9 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import Db from 'src/app/db.service';
 
 import * as firebase from 'firebase'
+import Upload from 'src/app/upload.service';
+
+import { interval, Subject } from 'rxjs'
 
 @Component({
   selector: 'app-add-post',
@@ -16,21 +19,27 @@ export class AddPostComponent implements OnInit {
   description: string =''
   image: any
 
+  public postProgress: string = 'pending'
+  public uploadPercentage: number
+
   constructor(
     public dialogRef: MatDialogRef<AddPostComponent>,
-    private db: Db
+    private db: Db,
+    private upload: Upload
   ) { }
 
   ngOnInit(): void {
     firebase.auth().onAuthStateChanged((user) => {
-        console.log(user)
+        // console.log(user)
 
         this.email = user.email
     })
+
   }
 
   close(): void {
     this.dialogRef.close();
+
   }
 
   post(): void {
@@ -41,7 +50,21 @@ export class AddPostComponent implements OnInit {
       image: this.image[0]
     })
 
-    this.dialogRef.close();
+    // let loading = Math.round((this.upload.state.bytesTransferred / this.upload.state.totalBytes) * 100)
+
+    let followUpload = interval(1500).subscribe(() => {
+      // console.log(this.upload.status)
+      // console.log(this.upload.state)
+      this.postProgress = 'uploading'
+
+      if(this.upload.status == 'uploaded'){
+        followUpload.unsubscribe()
+        this.postProgress = 'uploaded'
+        this.dialogRef.close();
+      }
+
+    })
+
   }
 
   public imageUpload(event: Event): void{

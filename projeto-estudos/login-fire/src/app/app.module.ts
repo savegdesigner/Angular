@@ -11,12 +11,15 @@ import { PageComponent } from './page/page.component';
 import { ReactiveFormsModule } from '@angular/forms'
 import { HomeComponent } from './home/home.component'
 import { PostsComponent } from './home/posts/posts.component'
+import { AddPostComponent } from './home/add-post/add-post.component'
 
+// Services
 import AuthGuard from './auth-guard.service';
 import Auth from './auth/auth.service'
 import Db from './db.service';
+import Upload from './upload.service';
 
-// FIrebase
+// Firebase
 import { AngularFireModule } from '@angular/fire'
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
@@ -28,7 +31,8 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatCardModule} from '@angular/material/card'
 import {MatDialogModule} from '@angular/material/dialog'
 import {MatIconModule} from '@angular/material/icon';
-import { AddPostComponent } from './home/add-post/add-post.component'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+
 
 
 @NgModule({
@@ -55,9 +59,10 @@ import { AddPostComponent } from './home/add-post/add-post.component'
     MatCardModule,
     MatDialogModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
-  providers: [ Auth, AuthGuard, Db ],
+  providers: [ Auth, AuthGuard, Db, Upload ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Db from 'src/app/db.service';
+import * as firebase from 'firebase'
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  public email: string
+
+  constructor(private db: Db) { }
 
   ngOnInit(): void {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.email = user.email
+
+      this.updateTimeLine()
+    })
+
+  }
+
+  public updateTimeLine(): void {
+    this.db.getPosts(this.email)
+
   }
 
 }
