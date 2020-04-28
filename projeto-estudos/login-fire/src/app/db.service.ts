@@ -42,12 +42,46 @@ class Db{
         
      }
 
-     getPosts(email: string): any{
+     getPosts(email: string): Promise<any> {
+
+        return new Promise((resolve, reject) => {
+            
+        })
 
         firebase.database().ref(`posts/${btoa(email)}`)
             .once('value')
             .then((snapshot: any) => {
-                console.log(snapshot.val())
+                // console.log(snapshot.val())
+
+                let posts: Array<any> = []
+
+                snapshot.forEach((childSnapshot: any) => {
+
+                    let post = childSnapshot.val()
+
+                    firebase.storage().ref()
+                        .child(`images/${childSnapshot.key}`)
+                        .getDownloadURL()
+                        .then((url: string) => {
+                            // console.log(url)
+                            post.imageUrl = url
+
+                            firebase.database().ref(`user_detail/${btoa(email)}`)
+                                .once('value')
+                                .then((snapshot: any) => {
+                                    // console.log(snapshot.val())
+
+                                    post.username = snapshot.val().username
+                                    posts.push(post)
+
+                                })
+                            // console.log(post)
+
+                        })
+                        
+
+                })
+
             })
 
      }
