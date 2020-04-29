@@ -45,10 +45,7 @@ class Db{
      getPosts(email: string): Promise<any> {
 
         return new Promise((resolve, reject) => {
-            
-        })
-
-        firebase.database().ref(`posts/${btoa(email)}`)
+            firebase.database().ref(`posts/${btoa(email)}`)
             .once('value')
             .then((snapshot: any) => {
                 // console.log(snapshot.val())
@@ -82,7 +79,12 @@ class Db{
 
                 })
 
+                resolve(posts)
+
             })
+        })
+
+
 
      }
 

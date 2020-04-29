@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  height: auto;
+  padding: 50px 100px 0px 100px;
+  -ms-flex-item-align: auto;
+      -ms-grid-row-align: auto;
+      align-self: auto;
+}
+
+.container a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container button {
+  margin: 10px;
+}
+/*# sourceMappingURL=home.component.css.map */

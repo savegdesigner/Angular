@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog'
 import Db from 'src/app/db.service';
 
@@ -6,6 +6,7 @@ import * as firebase from 'firebase'
 import Upload from 'src/app/upload.service';
 
 import { interval, Subject } from 'rxjs'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-post',
@@ -13,6 +14,8 @@ import { interval, Subject } from 'rxjs'
   styleUrls: ['./add-post.component.scss']
 })
 export class AddPostComponent implements OnInit {
+
+  @Output() public refreshTimeline: EventEmitter<any> = new EventEmitter<any>()
 
   email: string
   title: string = ''
@@ -61,6 +64,9 @@ export class AddPostComponent implements OnInit {
         followUpload.unsubscribe()
         this.postProgress = 'uploaded'
         this.dialogRef.close();
+
+        // this.refreshTimeline.emit()
+
       }
 
     })

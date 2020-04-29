@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,SAAS,EAAE,KAAK;EAChB,MAAM,EAAE,IAAI;CACb;;AAED,AAAA,qBAAqB,CAAC;EACpB,gBAAgB,EAAE,iEAAiE;EACnF,eAAe,EAAE,KAAK;CACvB;;AAED,AAAA,gBAAgB,CAAA;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,SAAS,EAAE,MAAM;CAClB",
+    "sources": [
+        "../../src/app/home/posts/posts.component.scss"
+    ],
+    "names": [],
+    "file": "posts.component.css"
+}
