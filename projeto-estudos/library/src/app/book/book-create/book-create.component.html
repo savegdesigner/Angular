@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="createBook()" class="create-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Book name</mat-label>
+      <input name="name" formControlName="name" matInput>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input name="author" formControlName="author" matInput>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-stroked-button color="primary">Create</button>
+</form>
+  
