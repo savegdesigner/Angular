@@ -26,7 +26,7 @@ export class BookCreateComponent implements OnInit {
 
   public createBook():void{
 
-    let book = new Book('000', 'Deltora Quest', 'Emilly Rhoda')
+    let book = new Book(this.form.value.name, this.form.value.author)
 
     this.db.createBook(book)
     

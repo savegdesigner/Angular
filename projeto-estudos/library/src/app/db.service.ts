@@ -16,8 +16,28 @@ class Db{
         })
     }
 
-    public getBooks(): void {
-        
+    public getBooks(): Promise<any> {
+
+        let books = []
+
+        return new Promise((resolve, reject) => {
+
+            firebase.database().ref('books/dW5kZWZpbmVk')
+            .on('value', (snapshot: any) => {
+
+                snapshot.forEach(child => {
+                    // console.log(child.val())
+                    books.push(child.val())
+
+                })
+            })
+
+            resolve(books)
+
+        })
+
+
+
     }
 }
 
