@@ -27,7 +27,9 @@ class Db{
 
                 snapshot.forEach(child => {
                     // console.log(child.val())
-                    books.push(child.val())
+                    let book: Book = new Book(child.val().name, child.val().author)
+                    book.id = child.key
+                    books.push(book)
 
                 })
             })
@@ -38,6 +40,17 @@ class Db{
 
 
 
+    }
+
+    deleteBook(id: string): void {
+        firebase.database().ref(`books/dW5kZWZpbmVk/${id}`)
+            .remove()
+            .then((res: any) => {
+                console.log(res)
+            })
+            .catch((error: Error) => {
+                console.log(error)
+            })
     }
 }
 
