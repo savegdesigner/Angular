@@ -1,0 +1,18 @@
+<mat-toolbar id="lib-header">
+    
+    <div id="title">
+        <h1>Welcome to my Library</h1>
+    </div>
+    
+    <div id="lib-menu">
+        <button mat-icon-button color="primary" [matMenuTriggerFor]="menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+            <a routerLink="books" mat-menu-item>Books</a>
+            <a routerLink="books/create" mat-menu-item>Create a book</a>
+        </mat-menu>
+
+    </div>
+</mat-toolbar>
