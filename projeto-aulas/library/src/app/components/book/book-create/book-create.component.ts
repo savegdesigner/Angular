@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BookService } from '../book.service';
+import Book from '../Book.model'
 
 @Component({
   selector: 'app-book-create',
@@ -25,7 +26,16 @@ export class BookCreateComponent implements OnInit {
   }
 
   public create(): void {
-    console.log(this.form.value)
+    let id = 0
+    let bookName = this.form.value.name
+    let bookAuthor = this.form.value.author
+    let bookCategory = this.form.value.category
+
+    let book: Book = new Book(id, bookName, bookAuthor, bookCategory)
+
+    this.bookService.create(book)
+
+    this.route.navigate(['books'])
   }
 
   public cancel(): void {
