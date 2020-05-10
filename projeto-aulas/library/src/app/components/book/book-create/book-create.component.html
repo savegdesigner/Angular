@@ -1,1 +1,25 @@
-<p>book-create works!</p>
+<form [formGroup]="form" (ngSubmit)="create()" class="form-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input formControlName="name" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Author</mat-label>
+        <input formControlName="author" matInput>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+            <mat-option value="Science">Science</mat-option>
+            <mat-option value="Programming">Programming</mat-option>
+            <mat-option value="Romance">Romance</mat-option>
+            <mat-option value="Sci Fi">Sci Fi</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+
+    <button (click)="cancel()" mat-stroked-button color="warn">Cancel</button>
+    <button type="submit" mat-stroked-button color="primary">Create</button>
+</form>
