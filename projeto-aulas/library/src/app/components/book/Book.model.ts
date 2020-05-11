@@ -1,17 +1,16 @@
 class Book {
-    public id: number
+    public id: string = this.generateId()
     public name: string
     public author: string
     public category: string
 
-    constructor(id: number, name: string, author: string, category: string){
-        this.id = id
+    constructor(name: string, author: string, category: string){
         this.name = name
         this.author = author
         this.category = category
     }
 
-    public getId(): number {
+    public getId(): string {
         return this.id
         
     }
@@ -31,8 +30,8 @@ class Book {
 
     }
 
-    private generateId(): number {
-        return 0
+    private generateId(): string {
+        return Math.random().toString(32).substring(2)
     }
 
 }

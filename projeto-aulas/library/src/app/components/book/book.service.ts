@@ -6,13 +6,18 @@ import Book from './Book.model';
 })
 export class BookService {
 
+  public booksShelf: Array<Book> = []
+
   constructor() { }
 
-  public read(): void {
-
+  public read(): Array<Book> {
+    this.booksShelf = JSON.parse(localStorage.getItem('books'))
+    return this.booksShelf
   }
   
   public create(book: Book): void{
-      console.log(book)
+    this.booksShelf.push(book)
+    localStorage.setItem('books', JSON.stringify(this.booksShelf))
   }
+
 }

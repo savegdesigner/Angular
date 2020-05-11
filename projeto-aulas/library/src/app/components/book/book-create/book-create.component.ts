@@ -26,12 +26,11 @@ export class BookCreateComponent implements OnInit {
   }
 
   public create(): void {
-    let id = 0
     let bookName = this.form.value.name
     let bookAuthor = this.form.value.author
     let bookCategory = this.form.value.category
 
-    let book: Book = new Book(id, bookName, bookAuthor, bookCategory)
+    let book: Book = new Book(bookName, bookAuthor, bookCategory)
 
     this.bookService.create(book)
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from '../book.service';
+import Book from '../Book.model';
 
 @Component({
   selector: 'app-book-read',
@@ -7,16 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookReadComponent implements OnInit {
 
-  public ELEMENT_DATA: Array<any> = [
-    {id: 1, name: 'Clean Code', author: 'Robert C. Martin'},
-  ]
+  public books: Array<Book>
 
   displayedColumns: string[] = ['id', 'name', 'author', 'update', 'delete']
-  dataSource = this.ELEMENT_DATA
+  dataSource = this.books
 
-  constructor() { }
+  constructor(
+    private bookService: BookService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.read()
+  }
+
+  public read(): void {
+    this.books = this.bookService.read()
+    console.log(this.books)
+  }
 
   public update(): void{
     console.log('update')
