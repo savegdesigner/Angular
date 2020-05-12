@@ -6,13 +6,22 @@ import Book from './Book.model';
 })
 export class BookService {
 
-  public booksShelf: Array<Book> = []
+  public booksShelf: Array<Book>
 
   constructor() { }
 
-  public read(): Array<Book> {
-    this.booksShelf = JSON.parse(localStorage.getItem('books'))
-    return this.booksShelf
+  public read(): Promise<any> {
+
+    return new Promise((resolve, reject) => {
+
+      this.booksShelf = JSON.parse(localStorage.getItem('books'))
+      
+      if(this.booksShelf !== undefined)
+          resolve(this.booksShelf)
+      reject('No book find')
+
+    })
+    
   }
   
   public create(book: Book): void{

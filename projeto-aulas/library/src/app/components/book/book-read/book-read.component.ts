@@ -9,9 +9,9 @@ import Book from '../Book.model';
 })
 export class BookReadComponent implements OnInit {
 
-  public books: Array<Book>
+  public books: Array<Book> = []
 
-  displayedColumns: string[] = ['id', 'name', 'author', 'update', 'delete']
+  displayedColumns: string[] = ['id', 'name', 'author', 'category', 'update', 'delete']
   dataSource = this.books
 
   constructor(
@@ -23,16 +23,24 @@ export class BookReadComponent implements OnInit {
   }
 
   public read(): void {
-    this.books = this.bookService.read()
-    console.log(this.books)
+    this.bookService.read()
+      .then(books => {
+        this.books = books
+        console.log(books)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   public update(): void{
     console.log('update')
+
   }
 
   public delete(): void{
     console.log('delete')
+
   }
 
 }
