@@ -24,22 +24,17 @@ export class BookReadComponent implements OnInit {
 
   public read(): void {
     this.bookService.read()
-      .then(books => {
-        this.books = books
-        console.log(books)
+      .forEach(book => {
+        this.books.push(book)
       })
-      .catch(err => {
-        console.log(err)
-      })
+     
   }
 
-  public update(): void{
-    console.log('update')
+  public update(bookId: string): void{
 
   }
 
-  public delete(): void{
-    console.log('delete')
+  public delete(bookId: string): void{
 
   }
 
