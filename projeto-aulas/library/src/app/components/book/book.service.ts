@@ -24,4 +24,14 @@ export class BookService {
     localStorage.setItem('books', JSON.stringify(this.booksShelf))
   }
 
+  public delete(bookId: string): void {
+    for(let i = 0; i < this.booksShelf.length; i++){
+      if(this.booksShelf[i].id == bookId){
+        this.booksShelf.splice(i, 1)
+      }
+    }
+
+    localStorage.setItem('books', JSON.stringify(this.booksShelf))
+  }
+
 }

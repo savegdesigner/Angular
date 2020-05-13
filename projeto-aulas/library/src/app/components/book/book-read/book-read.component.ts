@@ -27,7 +27,7 @@ export class BookReadComponent implements OnInit {
       .forEach(book => {
         this.books.push(book)
       })
-     
+
   }
 
   public update(bookId: string): void{
@@ -35,7 +35,9 @@ export class BookReadComponent implements OnInit {
   }
 
   public delete(bookId: string): void{
-
+    this.books = []
+    this.bookService.delete(bookId)
+    this.read()
   }
 
 }
