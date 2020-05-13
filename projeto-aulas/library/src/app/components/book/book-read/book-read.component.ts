@@ -28,10 +28,12 @@ export class BookReadComponent implements OnInit {
         this.books.push(book)
       })
 
+      this.dataSource = this.books
+
   }
 
   public update(bookId: string): void{
-
+    
   }
 
   public delete(bookId: string): void{
