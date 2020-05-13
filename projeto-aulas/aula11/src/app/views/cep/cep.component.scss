@@ -1,0 +1,36 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-family: 'Roboto', sans-serif;
+
+    button{
+        margin-top: 10px;
+        padding: 8px 14px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+
+    .infos{
+        margin-top: 10px;
+
+        p{
+            text-align: center;
+            color: white;
+        }
+
+        span{
+            margin-right: 4px;
+        }
+    }
+
+    
+    h1{
+        color: white;
+        margin-bottom: 5px;
+    }
+}

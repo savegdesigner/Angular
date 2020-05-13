@@ -1,0 +1,49 @@
+.container{
+    margin-top: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-family: 'Roboto', sans-serif;
+
+    h2{
+        color: white;
+    }
+
+    button{
+        margin-top: 10px;
+        padding: 8px 14px;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+table{
+    margin-top: 20px;
+    color: white;
+    
+    th,
+    td{
+        margin: 4px;
+    }
+
+    tr,
+    td,
+    th{
+        padding: 4;
+    }
+
+    th{
+        background-color: rgb(49, 49, 49);
+    }
+
+    tr:nth-child(odd){
+        background-color: rgb(153, 153, 153);
+    }
+
+    tr:nth-child(even){
+        background-color: rgb(112, 112, 112);
+    }
+}
