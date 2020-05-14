@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import Book from '../Book.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-read',
@@ -15,7 +16,8 @@ export class BookReadComponent implements OnInit {
   dataSource = this.books
 
   constructor(
-    private bookService: BookService
+    private bookService: BookService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +35,7 @@ export class BookReadComponent implements OnInit {
   }
 
   public update(bookId: string): void{
-    
+    this.route.navigate([`books/update/${bookId}`])
   }
 
   public delete(bookId: string): void{

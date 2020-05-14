@@ -18,10 +18,31 @@ export class BookService {
       return this.booksShelf
     
   }
+
+  public readById(bookId: string): Book {
+    for(let i = 0; i < this.booksShelf.length; i++){
+      if(this.booksShelf[i].id == bookId){
+         return this.booksShelf[i]
+      }
+    }
+  }
   
   public create(book: Book): void{
     this.booksShelf.push(book)
     localStorage.setItem('books', JSON.stringify(this.booksShelf))
+    
+  }
+
+  public update(book: Book): void {
+    for(let i = 0; i < this.booksShelf.length; i++){
+      if(this.booksShelf[i].id == book.id){
+        this.booksShelf.splice(i, 1)
+        this.booksShelf.push(book)
+      }
+    }
+
+    localStorage.setItem('books', JSON.stringify(this.booksShelf))
+
   }
 
   public delete(bookId: string): void {

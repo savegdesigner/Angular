@@ -19,14 +19,15 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-
+import { BookUpdateComponent } from './components/book/book-update/book-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BookReadComponent,
-    BookCreateComponent
+    BookCreateComponent,
+    BookUpdateComponent
   ],
   imports: [
     BrowserModule,
