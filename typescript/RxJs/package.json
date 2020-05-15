@@ -1,19 +1,19 @@
 {
   "name": "RxJs",
   "version": "1.0.0",
-  "description": "Getting into reactive X",
+  "description": "Checking RxJs",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config webpack.config.js --watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "ME",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "rxjs": "^6.5.5",
-    "ts-loader": "^7.0.1",
-    "typescript": "^3.8.3",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "ts-loader": "^7.0.4",
+    "typescript": "^3.9.2",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }
