@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <h3>Exercício 01</h3>
+
+    <input [(ngModel)]="num1" type="number">
+    <span>+</span>
+    <input [(ngModel)]="num2" type="number">
+    <span>=</span>
+
+    <span>{{num1 + num2}}</span>
+</div>
+
+<div class="wrapper">
+    <h3>Exercício 02</h3>
+
+    <p>Digite uma marca de cachorro</p>
+    <input [(ngModel)]="marca" type="text" placeholder="e.g salsicha">
+    <button (click)="buscarMarca()">Buscar</button>
+
+    <div>
+        <img [ngClass]="show" src="{{marcaUrl}}" alt="Cão">
+    </div>
+
+
+</div>
