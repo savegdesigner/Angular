@@ -33,3 +33,21 @@ function addItem(val) {
 setTimeout(() => {
     observer.unsubscribe()
 }, 4000)
+
+import { Subject } from 'rxjs'
+
+let subject = new Subject()
+
+subject.subscribe(
+    data => addItem('Observer 1: '+ data),
+    err => addItem(err),
+    () => addItem('Observer 1 completed')
+)
+
+subject.next('First Sent')
+
+let observerSubject = subject.subscribe(
+    data => addItem('Observer 2: ' + data)
+)
+
+subject.next('Second Sent')
